@@ -8,7 +8,8 @@
 #' @param cluster Decision on whether genes should be clustered or just listed by gene rank
 #' @return A ggplot object containing the heatmap
 #' @import Seurat
-#' @import tidyverse
+#' @import dplyr
+#' @import tidyr
 #' @import ggplot2
 #' @export
 
