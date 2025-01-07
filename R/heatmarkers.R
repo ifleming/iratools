@@ -35,7 +35,7 @@ heatmarkers <- function(seurat_object,
   
   # Add metadata to expression data
   expr_data$cell_id <- rownames(expr_data) 
-  expr_data$group <- seurat_object[[identity_comparison]] %>% pull()
+  expr_data$group <- seurat_object[[identity_comparison]] %>% dplyr::pull()
   
   # Cluster rows (genes)
   gene_matrix <- t(expr_data[, top_markers$gene])
