@@ -26,7 +26,7 @@ heatmarkers <- function(seurat_object,
     dplyr::top_n(n = n_markers_shown, 
           wt = .data[[ranking_metric]]) 
   
-  top_markers[top_markers$gene == unique(top_markers$gene),]
+  top_markers <- top_markers[top_markers$gene == unique(top_markers$gene),]
   
   # Get expression data from Seurat object
   expr_data <- Seurat::FetchData(seurat_object, 
