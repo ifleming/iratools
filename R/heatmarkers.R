@@ -55,7 +55,7 @@ heatmarkers <- function(seurat_object,
   if(cluster == T){
     plot_data$gene <- factor(plot_data$gene, levels = gene_order)
   } else if(cluster == F){
-    plot_data$gene <- factor(plot_data$gene, levels = top_markers$gene)
+    plot_data$gene <- factor(plot_data$gene, levels = rev(top_markers$gene))
   }
   colnames(plot_data) <- c("cell_id","group","gene","expression")
 
@@ -69,7 +69,7 @@ heatmarkers <- function(seurat_object,
                 "#ABD9E9", "#E0F3F8", "#FFFFBF",
                 "#FEE090", "#FDAE61", "#F46D43", 
                 "#D73027", "#A50026"),
-      limits = c(-2, 2),
+      limits = c(-5, 5),
       name = "Scaled\nExpression"
     ) +
     ggplot2::theme_minimal() +
