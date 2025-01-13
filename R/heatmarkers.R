@@ -31,7 +31,7 @@ heatmarkers <- function(seurat_object,
   # Get expression data from Seurat object
   expr_data <- Seurat::FetchData(seurat_object, 
                         vars = top_markers$gene, 
-                        layer = "data") %>%
+                        layer = "scale.data") %>%
     scale() %>%
     as.data.frame()
   
