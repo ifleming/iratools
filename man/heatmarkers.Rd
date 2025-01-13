@@ -9,7 +9,6 @@ heatmarkers(
   markers_df,
   n_markers_shown,
   identity_comparison,
-  slot,
   ranking_metric = "avg_log2FC",
   cluster = F
 )
@@ -22,10 +21,6 @@ heatmarkers(
 \item{n_markers_shown}{Number of positive markers per condition to show in heatmap}
 
 \item{identity_comparison}{Column name in Seurat object metadata used to group cells e.g. "cell_type"}
-
-\item{identity_comparison}{Column name in Seurat object metadata used to group cells e.g. "cell_type"}
-
-\item{slot}{Which data slot to map}
 
 \item{ranking_metric}{Column name to rank genes by (default: "avg_log2FC")}
 
