@@ -6,6 +6,7 @@
 #' @param identity_comparison Column name in Seurat object metadata used to group cells e.g. "cell_type"
 #' @param ranking_metric Column name to rank genes by (default: "avg_log2FC")
 #' @param cluster Decision on whether genes should be clustered or just listed by gene rank
+#' @param slot Which data slot to map
 #' @return A ggplot object containing the heatmap
 #' @import Seurat
 #' @import dplyr
@@ -17,6 +18,7 @@ heatmarkers <- function(seurat_object,
                           markers_df,
                           n_markers_shown,
                           identity_comparison,
+                          slot,
                           ranking_metric = "avg_log2FC",
                           cluster = F) {
   
@@ -31,7 +33,7 @@ heatmarkers <- function(seurat_object,
   # Get expression data from Seurat object
   expr_data <- Seurat::FetchData(seurat_object, 
                         vars = top_markers$gene, 
-                        layer = "scale.data") %>%
+                        layer = slot) %>%
     scale() %>%
     as.data.frame()
   

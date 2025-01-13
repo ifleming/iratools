@@ -2,5 +2,6 @@
 
 export(heatmarkers)
 import(Seurat)
+import(dplyr)
 import(ggplot2)
-import(tidyverse)
+import(tidyr)
