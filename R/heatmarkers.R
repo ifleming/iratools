@@ -97,3 +97,4 @@ heatmarkers <- function(seurat_object,
 #  ranking_metric = "avg_log2FC",
 #  cluster = F
 #)
+
