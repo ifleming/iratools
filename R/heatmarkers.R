@@ -71,6 +71,7 @@ heatmarkers <- function(seurat_object,
                 "#FEE090", "#FDAE61", "#F46D43", 
                 "#D73027", "#A50026"),
       limits = c(min(plot_data$expression), max(plot_data$expression)),
+      midpoint = (min(plot_data$expression) - max(plot_data$expression) + (min(plot_data$expression) - max(plot_data$expression))*0.2),
       name = "Scaled\nExpression"
     ) +
     ggplot2::theme_minimal() +
