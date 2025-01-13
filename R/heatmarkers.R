@@ -69,7 +69,7 @@ heatmarkers <- function(seurat_object,
                 "#ABD9E9", "#E0F3F8", "#FFFFBF",
                 "#FEE090", "#FDAE61", "#F46D43", 
                 "#D73027", "#A50026"),
-      limits = c(-5, 5),
+      limits = c(min(plot_data$expression), max(plot_data$expression)),
       name = "Scaled\nExpression"
     ) +
     ggplot2::theme_minimal() +
