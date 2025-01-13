@@ -23,6 +23,8 @@ heatmarkers(
 
 \item{identity_comparison}{Column name in Seurat object metadata used to group cells e.g. "cell_type"}
 
+\item{identity_comparison}{Column name in Seurat object metadata used to group cells e.g. "cell_type"}
+
 \item{slot}{Which data slot to map}
 
 \item{ranking_metric}{Column name to rank genes by (default: "avg_log2FC")}
