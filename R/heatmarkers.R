@@ -67,8 +67,8 @@ heatmarkers <- function(seurat_object,
     ggplot2::geom_tile() +
     ggplot2::facet_grid(. ~ group, scales = "free_x", space = "free_x") +
     ggplot2::scale_fill_gradientn(
-      colors = c("#313695", 
-                "#FEE090", "#FDAE61", "#F46D43", 
+      colors = c("#313695", "#ADD8E6",
+                "#e2dac4", "#FDAE61", "#F46D43", 
                 "#D73027", "#A50026"),
       limits = c(min(plot_data$expression), max(plot_data$expression)),
       name = "Scaled\nExpression"
