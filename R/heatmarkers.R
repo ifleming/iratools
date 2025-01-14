@@ -61,16 +61,26 @@ heatmarkers <- function(seurat_object,
   }
   colnames(plot_data) <- c("cell_id","group","gene","expression")
 
+  max_abs <- max(abs(range(plot_data$expression)))
+  value_limits <- c(-max_abs, max_abs)
+
   print(plot_data)
   # Create heatmap
   the_heatmap <- ggplot2::ggplot(plot_data, aes(x = cell_id, y = gene, fill = expression)) +
     ggplot2::geom_tile() +
     ggplot2::facet_grid(. ~ group, scales = "free_x", space = "free_x") +
     ggplot2::scale_fill_gradientn(
-      colors = c("#313695", "#ADD8E6",
-                "#e2dac4", "#FDAE61", "#F46D43", 
+      colors = c("#313695", "#ADD8E6", 
+                "#FFFFFF",  # White color at midpoint
+                "#FDAE61", "#F46D43", 
                 "#D73027", "#A50026"),
-      limits = c(min(plot_data$expression), max(plot_data$expression)),
+      values = scales::rescale(
+        c(value_limits[1], 
+          value_limits[1]/2,
+          0,  # Midpoint
+          value_limits[2]/2, 
+          value_limits[2])),
+      limits = value_limits,
       name = "Scaled\nExpression"
     ) +
     ggplot2::theme_minimal() +
