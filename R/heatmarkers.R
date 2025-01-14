@@ -71,13 +71,13 @@ heatmarkers <- function(seurat_object,
     ggplot2::facet_grid(. ~ group, scales = "free_x", space = "free_x") +
     ggplot2::scale_fill_gradientn(
       colors = c("#313695", "#ADD8E6", 
-                "#FFFFFF",  # White color at midpoint
+                "#FFFFFF",  
                 "#FDAE61", "#F46D43", 
                 "#D73027", "#A50026"),
       values = scales::rescale(
         c(value_limits[1], 
           value_limits[1]/2,
-          0,  # Midpoint
+          0,  
           value_limits[2]/2, 
           value_limits[2])),
       limits = value_limits,
