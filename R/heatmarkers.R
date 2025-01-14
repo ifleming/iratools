@@ -69,7 +69,7 @@ heatmarkers <- function(seurat_object,
   the_heatmap <- ggplot2::ggplot(plot_data, aes(x = cell_id, y = gene, fill = expression)) +
     ggplot2::geom_tile() +
     ggplot2::facet_grid(. ~ group, scales = "free_x", space = "free_x") +
-    ggplot2::scale_color_gradient2(low = "blue", mid = "white", high = "red", name = "Scaled\nExpression", midpoint = 2) +
+    ggplot2::scale_fill_gradient2(low = "blue", mid = "white", high = "red", name = "Scaled\nExpression", midpoint = 0) +
     ggplot2::theme_minimal() +
     ggplot2::theme(
       axis.text.y = element_text(size = 8),
